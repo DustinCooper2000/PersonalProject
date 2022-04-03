@@ -1,2 +1,4 @@
 # PersonalProject
-Just a space for me to practice python
+Started on April 3, 2022
+By Dustin Cooper
+We will see where this goes
