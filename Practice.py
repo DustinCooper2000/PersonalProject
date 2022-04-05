@@ -13,33 +13,39 @@ class Calculator:
         self.y = 0
         self.again = ""
         self.clear = ""
+        self.PastResult = 0
 
     def imply(self):
         while self.again != "n":
-            self.x = int(input("what is the first number you would like to use?"))
+            if self.clear == "n":
+                self.x = self.PastResult
+            else:
+                self.x = int(input("what is the first number you would like to use?"))
+
             self.operator = input("Which operator would you like to use?")
             self.y = int(input("What is the second number you would like to use?"))
             if self.operator == "+":
-                self.add(self.x, self.y)
+                self.PastResult = self.add(self.x, self.y)
 
             elif self.operator == "-":
-                self.subtract(self.x, self.y)
+                self.PastResult = self.subtract(self.x, self.y)
 
             elif self.operator == "*":
-                self.multiply(self.x, self.y)
+                self.PastResult = self.multiply(self.x, self.y)
 
             elif self.operator == "/":
-                self.divide(self.x, self.y)
+                self.PastResult = self.divide(self.x, self.y)
 
             elif self.operator == "**":
-                self.exponent(self.x, self.y)
+                self.PastResult = self.exponent(self.x, self.y)
 
             self.again = str(input("Would you like to make another calculation? (y/n)")).lower()
             print(self.again)
-            #if self.again == "y" or "Y":
-                #self.clear = input("Would you like to clear your result? (y/n)")
-                #if self.clear == "y" or "Y":
-                 #   self.
+            if self.again == "y":
+                self.clear = str(input("Would you like to clear your result? (y/n)")).lower()
+                if self.clear == "y":
+                    self.PastResult = 0
+
 
     def add(self, x, y):
         r = x + y
