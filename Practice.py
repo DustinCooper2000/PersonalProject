@@ -4,6 +4,8 @@
 # Just for fun
 #
 ################################################################################################################
+import math
+import numpy
 
 class Calculator:
 
@@ -72,10 +74,16 @@ class Calculator:
         print(r)
         return r
 
+    def distance(self, x1, x2, y1, y2):
+        r = math.sqrt(((x2 - x1)**2) + ((y2 - y1)**2))
+        r2 = f"{r:.9f}"
+        print(r2)
+        return r2
+
 def main():
 
     calculate = Calculator()
-    calculate.imply()
+    calculate.distance(84.2888595220391, 84.28885506999796, 37.57358487886206, 37.57357158231748)
 
 
 if __name__ == "__main__":
